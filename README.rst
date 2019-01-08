@@ -65,12 +65,12 @@ Usage
                 TEST# tree wkdir
                 wkdir
                 ├── a
-                │   ├── b
-                │   │   ├── xx
-                │   │   ├── yy
-                │   │   └── zz
-                │   ├── c
-                │   └── d
+                │   ├── b
+                │   │   ├── xx
+                │   │   ├── yy
+                │   │   └── zz
+                │   ├── c
+                │   └── d
                 ├── e
                 └── f
                 
