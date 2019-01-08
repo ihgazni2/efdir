@@ -21,7 +21,7 @@ Quickstart
 ----------
 - pip3 install efdir
 
-- edit a cfg.rst file
+- edit a cfg.rst file using bullet-list as below:
 
 .. image:: /docs/images/rst.0.png
 
