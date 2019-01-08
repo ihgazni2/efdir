@@ -1,0 +1,27 @@
+{
+    "REPO":{
+        "BACKUP" : {},
+        "DRAFT" : {},
+        "INIT" : {
+            "init.sh$":{}
+        },
+        "EDICT" : {
+            "IMGS":{
+                "img0.desc$":{},
+                "img1.desc$":{}
+            },
+            "DETAILS":{
+                "1.info$":{},
+                "2.info$":{}
+            },
+            "edict.py$":{}
+        },
+        "setup.py$":{},
+        "README.md$":{},
+        "LICENSE$":{},
+        "install.sh$":{},
+        "uninstall.sh$":{},
+        "update.sh$":{},
+        "pypiupload.sh$":{}
+    }
+}

@@ -1,0 +1,7 @@
+lxml
+elist
+shutil
+xdict
+efdir
+nvhtml
+docutils
