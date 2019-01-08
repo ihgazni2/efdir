@@ -2,7 +2,6 @@
 ReadMe
 ======
 
-
 Installation
 ------------
     ::
@@ -14,7 +13,6 @@ License
 -------
 
 - MIT
-
 
 
 Quickstart
