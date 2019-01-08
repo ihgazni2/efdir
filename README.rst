@@ -132,12 +132,8 @@ Features
 - mktree from .rst bullet-list config
 - mktree from .json config
 
-
 References
 ----------
 
 * docutils
 * shutil
-
-
-
