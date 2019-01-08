@@ -23,11 +23,11 @@ Quickstart
 
 - edit a cfg.rst file
 
-.. image:: /path/to/image.jpg
+.. image:: /docs/images/rst.0.png
 
 - run cmd **efdir cfg.rst wkdir** 
       
-.. image:: /path/to/image.jpg
+.. image:: /docs/images/mktree.0.png
 
 
 Usage
