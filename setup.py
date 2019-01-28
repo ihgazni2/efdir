@@ -5,9 +5,13 @@
 
 from setuptools import setup, find_packages
 
-with open('./README.rst') as readme_file:
-    readme = readme_file.read()
-
+try:
+    with open('./README.rst') as readme_file:
+        readme = readme_file.read()
+except:
+    readme = "refer to https://github.com/ihgazni2/efdir/"
+else:
+    pass
 
 requirements = [
     'lxml',
@@ -28,7 +32,7 @@ setup_requirements = [
 
 setup(
     name='efdir',
-    version='0.0.11',
+    version='0.0.12',
     description="handle dirs, mktree from .rst or .json",
     long_description=readme,
     author="dli",
