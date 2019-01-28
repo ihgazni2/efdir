@@ -64,7 +64,6 @@ def rjson(fn,codec='utf-8'):
 def wjson(fn,js,codec='utf-8'):
     s = json.dumps(js)
     wfile(fn,s,codec)
-    fd.close()
 
 def touch(fn):
     fd = open(fn,"w+")
