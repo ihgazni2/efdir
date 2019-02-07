@@ -32,7 +32,7 @@ setup_requirements = [
 
 setup(
     name='efdir',
-    version='0.0.13',
+    version='0.0.14',
     description="handle dirs, mktree from .rst or .json",
     long_description=readme,
     author="dli",

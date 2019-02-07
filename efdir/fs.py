@@ -3,7 +3,6 @@ import json
 import shutil
 import elist.elist as elel
 
-
 def pl2path(pl):
     pl = elel.mapv(pl,str)
     return(os.path.join(*pl))
@@ -137,3 +136,35 @@ def mkdirs(path,**kwargs):
             pass
     else:
         pass
+
+####
+
+def walkf(dirpath=os.getcwd()):
+    fps = []
+    for (root,subdirs,files) in os.walk(dirpath):
+        for fn in files:
+            path = os.path.join(root,fn)
+            fps.append(path)
+    return(fps)
+
+def walkd(dirpath=os.getcwd()):
+    fps = []
+    for (root,subdirs,files) in os.walk(dirpath):
+        for subd in subdirs:
+            path = os.path.join(root,subd)
+            fps.append(path)
+    return(fps)
+
+def walk(dirpath=os.getcwd()):
+    fps = []
+    for (root,subdirs,files) in os.walk(dirpath):
+        for fn in files:
+            path = os.path.join(root,fn)
+            fps.append(path)
+        for subd in subdirs:
+            path = os.path.join(root,subd)
+            fps.append(path)
+    return(fps)
+
+####
+
