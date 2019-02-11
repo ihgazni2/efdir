@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 import elist.elist as elel
+import chardet
 
 def pl2path(pl):
     pl = elel.mapv(pl,str)
@@ -45,15 +46,32 @@ def afile(fn,content,codec='utf-8'):
     content = content.encode(codec)
     abfile(fn,content)
 
-def prepend(fn1,fn2,codec='utf-8',**kwargs):
+def pfile(fn1,content,codec='utf-8',**kwargs):
     if('fsp' in kwargs):
         fsp = kwargs['fsp']
     else:
         fsp = "\n"
+    if(isinstance(content,bytes)):
+        content2 = content
+    else:
+        content2 = content.decode(codec)
     content1 = rfile(fn1,codec)
-    content2 = rfile(fn2,codec)
     content = content2+fsp+content1
     wfile(fn1,content,codec)
+
+
+def fpfile(fn1,fn2,codec1='utf-8',codec2='utf-8',**kwargs):
+    if('fsp' in kwargs):
+        fsp = kwargs['fsp']
+    else:
+        fsp = "\n"
+    content1 = rfile(fn1,codec1)
+    content2 = rfile(fn2,codec2)
+    content = content2+fsp+content1
+    wfile(fn1,content,codec)
+
+####
+
 
 def rjson(fn,codec='utf-8'):
     s = rfile(fn,codec)
@@ -167,4 +185,12 @@ def walk(dirpath=os.getcwd()):
     return(fps)
 
 ####
+def detect_file(fn):
+    fd = open(fn,'rb+')
+    byts = fd.read()
+    fd.close()
+    encd = chardet.detect(byts)['encoding']
+    return(encd)
 
+
+####
