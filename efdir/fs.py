@@ -12,7 +12,7 @@ def path2pl(path):
     pl = []
     parent,ele = os.path.split(path)
     pl = elel.unshift(pl,ele)
-    while(parent != ""):
+    while((parent != "")and(parent != os.path.sep)):
         parent,ele = os.path.split(parent)
         pl = elel.unshift(pl,ele)
     return(pl)
