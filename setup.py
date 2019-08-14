@@ -15,10 +15,10 @@ else:
 
 requirements = [
     'lxml',
-    'elist',
     'xdict',
     'nvhtml',
-    'docutils'
+    'docutils',
+    'elist',
 ]
 
 setup_requirements = [
@@ -32,7 +32,7 @@ setup_requirements = [
 
 setup(
     name='efdir',
-    version='0.0.16',
+    version='0.0.17',
     description="handle dirs, mktree from .rst or .json",
     long_description=readme,
     author="dli",
