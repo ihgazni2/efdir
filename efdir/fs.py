@@ -3,6 +3,7 @@ import json
 import shutil
 import elist.elist as elel
 import chardet
+import zipfile
 
 def pl2path(pl):
     pl = elel.mapv(pl,str)
@@ -194,3 +195,21 @@ def detect_file(fn):
 
 
 ####
+
+
+
+####
+
+def zip_dir(src_dir,dst):
+    f = zipfile.ZipFile(dst,'w',zipfile.ZIP_DEFLATED)
+    fl = walkf(src_dir)
+    for file in fl:
+        f.write(file)
+    f.close()
+
+
+def unzip(src,dst_dir="./"):
+    f = zipfile.ZipFile(src)  
+    for file in f.namelist():
+        f.extract(file,dst_dir)    
+    f.close()
