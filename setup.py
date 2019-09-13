@@ -21,7 +21,9 @@ requirements = [
     'elist',
     'edict',
     'pandas',
-    'ltdict'
+    'ltdict',
+    'dlist',
+    'efuntool'
 ]
 
 setup_requirements = [
@@ -32,7 +34,9 @@ setup_requirements = [
     'docutils',
     'edict',
     'pandas',
-    'ltdict'
+    'ltdict',
+    'dlist',
+    'efuntool'
 ]
 
 
@@ -57,7 +61,8 @@ setup(
              'efdir=efdir.bin:main',
              'efdir_repl_suffix=efdir.BIN.repl_suffix:main',
              'efdir_csv2cols=efdir.BIN.csv2cols:main',
-             'efdir_csv2dtb=efdir.BIN.csv2dtb:main'
+             'efdir_csv2dtb=efdir.BIN.csv2dtb:main',
+             'efdir_csv2jsd=efdir.BIN.csv2jsd:main',
           ]
     },
     classifiers=[
