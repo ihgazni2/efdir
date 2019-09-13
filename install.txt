@@ -2,7 +2,9 @@
 /usr/local/bin/efdir
 /usr/local/bin/efdir_csv2cols
 /usr/local/bin/efdir_csv2dtb
+/usr/local/bin/efdir_csv2jsd
 /usr/local/bin/efdir_repl_suffix
+/usr/local/bin/efuntool
 /usr/local/bin/nvhtml_beauty
 /usr/local/bin/nvhtml_dir
 /usr/local/bin/nvhtml_find_all
