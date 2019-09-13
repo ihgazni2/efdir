@@ -19,6 +19,9 @@ requirements = [
     'nvhtml',
     'docutils',
     'elist',
+    'edict',
+    'pandas',
+    'ltdict'
 ]
 
 setup_requirements = [
@@ -26,13 +29,16 @@ setup_requirements = [
     'elist',
     'xdict',
     'nvhtml',
-    'docutils'
+    'docutils',
+    'edict',
+    'pandas',
+    'ltdict'
 ]
 
 
 setup(
     name='efdir',
-    version='0.0.18',
+    version='0.0.19',
     description="handle dirs, mktree from .rst or .json",
     long_description=readme,
     author="dli",
@@ -47,7 +53,12 @@ setup(
     license="MIT license",
     keywords='mktree,dir-toolset',
      entry_points = {
-         'console_scripts': ['efdir=efdir.bin:main']
+         'console_scripts': [
+             'efdir=efdir.bin:main',
+             'efdir_repl_suffix=efdir.BIN.repl_suffix:main',
+             'efdir_csv2cols=efdir.BIN.csv2cols:main',
+             'efdir_csv2dtb=efdir.BIN.csv2dtb:main'
+          ]
     },
     classifiers=[
         'Environment :: Console',

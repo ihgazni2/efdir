@@ -196,9 +196,27 @@ def detect_file(fn):
 
 ####
 
+def repl_suffix(src,suffix):
+    '''
+        src = "./application.scv"
+        suffix = ".json"
+        repl_suffix(src,suffix)
+        >>> os.getcwd()
+        '/opt/JS/NV5_MIMEJS/CONSTS'
+        >>> repl_suffix(src,suffix)
+        '/opt/JS/NV5_MIMEJS/CONSTS/application.json'
+        >>>
+    '''
+    src_abs_path = os.path.abspath(src)
+    prefix,orig_suffix = os.path.splitext(src_abs_path)
+    if(suffix[0]=="."):
+        pass
+    else:
+        suffix = "." + suffix
+    dst_abs_path = prefix+suffix
+    return(dst_abs_path)
 
-
-####
+####zip
 
 def zip_dir(src_dir,dst):
     f = zipfile.ZipFile(dst,'w',zipfile.ZIP_DEFLATED)
@@ -213,3 +231,8 @@ def unzip(src,dst_dir="./"):
     for file in f.namelist():
         f.extract(file,dst_dir)    
     f.close()
+
+
+####csv
+
+
