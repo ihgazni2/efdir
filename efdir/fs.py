@@ -158,6 +158,27 @@ def mkdirs(path,**kwargs):
 
 ####
 
+def rmdir(path,**kwargs):
+    if('force' in kwargs):
+        force = kwargs['force']
+    else:
+        force = False
+    #############################
+    try:
+        os.rmdir(path)
+    except Exception as e:
+        if(force):
+            shutil.rmtree(path)
+        else:
+            #print(e)
+            pass
+    else:
+        pass
+
+
+
+####
+
 def walkf(dirpath=os.getcwd()):
     fps = []
     for (root,subdirs,files) in os.walk(dirpath):
@@ -215,6 +236,8 @@ def repl_suffix(src,suffix):
         suffix = "." + suffix
     dst_abs_path = prefix+suffix
     return(dst_abs_path)
+
+####
 
 ####zip
 
