@@ -2,8 +2,11 @@ from efdir.primitive import *
 from efdir.etree import *
 from lxml import etree
 import elist.elist as elel
+from efdir.fs import fmt_path
+
 
 def abspath2etree(abspath):
+    abspath = fmt_path(abspath)
     pl = abspath.split('/')
     pl = pl[1:]
     eles = elel.mapv(pl,lambda ele:etree.Element(ele))

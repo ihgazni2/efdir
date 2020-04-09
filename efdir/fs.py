@@ -5,6 +5,30 @@ import elist.elist as elel
 import chardet
 import zipfile
 
+
+def fmt_path(path):
+    return(os.path.abspath(path))
+
+def get_parent_of_path(path):
+    return(os.path.dirname(path))
+
+
+def get_ance_of_path(which,path):
+    c = 0
+    ance = path
+    while(c<which):
+        ance = get_parent_of_path(ance)
+        c = c + 1
+    return(ance)
+
+
+def get_running_cwd():
+    return(os.getcwd())
+
+def get_file_cwd():
+    return(os.path.abspath(__file__))
+
+
 def pl2path(pl):
     pl = elel.mapv(pl,str)
     return(os.path.join(*pl))
