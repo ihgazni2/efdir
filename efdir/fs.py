@@ -10,10 +10,11 @@ def fmt_path(path):
     return(os.path.abspath(path))
 
 def get_parent_of_path(path):
+    path = fmt_path(path)
     return(os.path.dirname(path))
 
-
 def get_ance_of_path(which,path):
+    path = fmt_path(path)
     c = 0
     ance = path
     while(c<which):
@@ -21,6 +22,48 @@ def get_ance_of_path(which,path):
         c = c + 1
     return(ance)
 
+
+def get_all_ances_of_path(path,includng_self=False):
+    path = fmt_path(path)
+    ances = []
+    if(includng_self):
+        ances.append(path)
+    else:
+        pass
+    p = os.path.dirname(path)
+    while(p!=os.path.sep):
+        ances.append(p)
+        p = os.path.dirname(p)
+    ances.append(os.path.sep)
+    ances.reverse()
+    return(ances)
+
+
+def get_top_path(path):
+    ances = get_all_ances_of_path(path)
+    return(ances[1])
+
+def is_sib_path_of(path0,path1):
+    p0 = get_parent_of_path(path0)
+    p1 = get_parent_of_path(path1)
+    return(p0 == p1)
+
+
+def get_path_head(path):
+    pl = path2pl(path)    
+    return(pl[0])
+
+def get_path_tail(path):
+    pl = path2pl(path)
+    return(elel.join(pl[1:],os.path.sep))
+
+def get_path_init(path):
+    pl = path2pl(path)
+    return(elel.join(pl[:-1],os.path.sep))
+
+def get_path_last(path):
+    pl = path2pl(path)
+    return(pl[-1])
 
 def get_running_cwd():
     return(os.getcwd())
@@ -34,6 +77,7 @@ def pl2path(pl):
     return(os.path.join(*pl))
 
 def path2pl(path):
+    path = fmt_path(path)
     pl = []
     parent,ele = os.path.split(path)
     pl = elel.unshift(pl,ele)
@@ -41,6 +85,56 @@ def path2pl(path):
         parent,ele = os.path.split(parent)
         pl = elel.unshift(pl,ele)
     return(pl)
+
+
+
+def is_descedant_pl_of(des_pl,ances_pl):
+    '''
+        from xdict.utils import *
+        is_descedant_pl_of(['a','b'],['a','b'])
+        is_descedant_pl_of(['a','b',''],['a','b'])
+        is_descedant_pl_of(['a','b','c'],['a','b'])
+        is_descedant_pl_of(['a','b','c','d'],['a','b'])
+        is_descedant_pl_of(['a','b','c','d',''],['a','b'])
+    '''
+    dl_len = des_pl.__len__()
+    al_len = ances_pl.__len__()
+    if(dl_len > al_len):
+        for i in range(0,al_len):
+            if(ances_pl[i] == des_pl[i]):
+                pass
+            else:
+                return(False)
+        return(True)
+    else:
+        return(False)
+
+
+def is_ancestor_pl_of(ances_pl,des_pl):
+    '''
+        from xdict.utils import *
+        is_ancestor_pl_of(['a','b'],['a','b'])
+        is_ancestor_pl_of(['a','b'],['a','b',''])
+        is_ancestor_pl_of(['a','b'],['a','b','c'])
+        is_ancestor_pl_of(['a','b'],['a','b','c','d'])
+        is_ancestor_pl_of(['a','b'],['a','b','c','d',''])
+    '''
+    dl_len = des_pl.__len__()
+    al_len = ances_pl.__len__()
+    if(dl_len > al_len):
+        for i in range(0,al_len):
+            if(ances_pl[i] == des_pl[i]):
+                pass
+            else:
+                return(False)
+        return(True)
+    else:
+        return(False)
+
+
+
+
+#####################
 
 def rbfile(fn):
     fd = open(fn,'rb+')
